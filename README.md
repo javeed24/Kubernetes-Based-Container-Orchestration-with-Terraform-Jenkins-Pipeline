@@ -1,4 +1,4 @@
-# DevOps Lifecycle Implementation – Analytics Pvt Ltd
+# Kubernetes-Based Container Orchestration with Terraform & Jenkins Pipeline
 
 ## Problem Statement
 Analytics Pvt Ltd is a product-based company using Docker for containerization.
