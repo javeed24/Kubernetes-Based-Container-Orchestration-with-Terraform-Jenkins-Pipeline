@@ -402,7 +402,7 @@ Commit to master branch (25th of every month)
 ![Terraform](screenshots/terraform-apply.png)
 
 ### Ansible – Playbook Execution
-![Ansible](screenshots/ansible-playbook.png)
+![Ansible](screenshots/ansible-playbook.webm)
 
 ### Jenkins Pipeline Overview
 ![Jenkins](screenshots/jenkins-pipeline.png)
