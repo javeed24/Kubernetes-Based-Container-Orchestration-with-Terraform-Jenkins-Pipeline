@@ -1,0 +1,84 @@
+pipeline {
+    agent any
+
+    environment {
+        DOCKERHUB_CREDENTIALS = credentials('dockerhub-credentials')
+        DOCKER_IMAGE = "javeeddevops/website"
+        K8S_MASTER   = "13.206.98.252"
+    }
+
+    stages {
+
+        stage('Git Checkout') {
+            steps {
+                echo 'Cloning repository...'
+                git branch: 'master',
+                    url: 'https://github.com/hshar/website.git'
+            }
+        }
+
+        stage('Create Dockerfile') {
+            steps {
+                echo 'Creating Dockerfile...'
+                sh '''
+cat > Dockerfile << 'DOCKERFILE'
+FROM ubuntu:20.04
+ENV DEBIAN_FRONTEND=noninteractive
+RUN apt-get update && \
+    apt-get install -y apache2 git && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN rm -rf /var/www/html/*
+COPY . /var/www/html/
+EXPOSE 80
+CMD ["apache2ctl", "-D", "FOREGROUND"]
+DOCKERFILE
+                '''
+            }
+        }
+
+        stage('Docker Build') {
+            steps {
+                echo 'Building Docker image...'
+                sh '''
+                    docker build -t ${DOCKER_IMAGE}:${BUILD_NUMBER} .
+                    docker tag ${DOCKER_IMAGE}:${BUILD_NUMBER} ${DOCKER_IMAGE}:latest
+                '''
+            }
+        }
+
+        stage('Docker Push') {
+            steps {
+                echo 'Pushing to DockerHub...'
+                sh '''
+                    echo ${DOCKERHUB_CREDENTIALS_PSW} | docker login -u ${DOCKERHUB_CREDENTIALS_USR} --password-stdin
+                    docker push ${DOCKER_IMAGE}:${BUILD_NUMBER}
+                    docker push ${DOCKER_IMAGE}:latest
+                '''
+            }
+        }
+
+        stage('Deploy to Kubernetes') {
+            steps {
+                echo 'Deploying to Kubernetes...'
+                sh '''
+                    ssh -o StrictHostKeyChecking=no -i /var/lib/jenkins/.ssh/id_rsa ec2-user@${K8S_MASTER} "
+                        kubectl apply -f /home/ec2-user/deployment.yml &&
+                        kubectl rollout status deployment/website-deployment &&
+                        kubectl get pods &&
+                        kubectl get svc
+                    "
+                '''
+            }
+        }
+    }
+
+    post {
+        success {
+            echo 'Pipeline completed successfully!'
+        }
+        failure {
+            echo 'Pipeline failed!'
+        }
+    }
+}
