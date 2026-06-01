@@ -398,19 +398,31 @@ Commit to master branch (25th of every month)
 
 ## Screenshots
 
+### Terraform Outputs – Kubernetes Cluster Instance IPs
+![Terraform Outputs](screenshots/terraform-output.png)
+
+### Ansible Inventory Configuration
+![Ansible Inventory](screenshots/ansible-inventory.png)
+
+### Ansible Connectivity Verification (Ping Test)
+![Ansible Ping](screenshots/ansible-ping.png)
+
+### Dockerfile Configuration for Apache Web Server
+![Dockerfile](screenshots/dockerfile.png)
+
 ### Terraform – EC2 Instances Created
 ![Terraform](screenshots/terraform-apply.png)
 
 ### Ansible – Playbook Execution
 ![Ansible](screenshots/ansible-playbook.webm)
 
-### Pipeline Overview -(All-Stages-Green)
+### Pipeline Overview – All Stages Successful
 ![Jenkins](screenshots/Pipeline-Overview-(All-Stages-Green).png)
 
-### Pipeline Script
+### Jenkins Pipeline Script
 ![Jenkins](screenshots/pipelinescript.txt)
 
-### Console output 
+### Jenkins Console Output
 ![Jenkins](screenshots/consoleoutput-1.png)
 ![Jenkins](screenshots/consoleoutput-2.png)
 ![Jenkins](screenshots/consoleoutput-3.png)
@@ -419,17 +431,16 @@ Commit to master branch (25th of every month)
 ![Jenkins](screenshots/consoleoutput-6.png)
 ![Jenkins](screenshots/consoleoutput-7.png)
 
-
-### Docker Image on DockerHub
+### Docker Image Available on Docker Hub
 ![DockerHub](screenshots/dockerhub-image.png)
 
-### Kubernetes Deployment – 2 Replicas
+### Kubernetes Deployment – 2 Running Replicas
 ![K8s Deployment](screenshots/k8s-deployment.png)
 
-### Kubernetes NodePort Service – Port 30008
+### Kubernetes NodePort Service Configuration (Port 30008)
 ![K8s Service](screenshots/k8s-service.png)
 
-### Application Running on Port 30008
+### Application Successfully Running via NodePort (30008)
 ![App Running](screenshots/app-running.png)
 
 ---
