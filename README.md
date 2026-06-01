@@ -421,7 +421,8 @@ Commit to master branch (25th of every month)
 ![Jenkins](screenshots/Pipeline-Overview-(All-Stages-Green).png)
 
 ### Jenkins Pipeline Script
-![Jenkins](screenshots/pipelinescript.txt)
+![Jenkins](screenshots/pipelinescript-1.png)
+![Jenkins](screenshots/pipelinescript-2.png)
 
 ### Jenkins Console Output
 ![Jenkins](screenshots/consoleoutput-1.png)
