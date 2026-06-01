@@ -414,7 +414,8 @@ Commit to master branch (25th of every month)
 ![Terraform](screenshots/terraform-apply.png)
 
 ### Ansible – Playbook Execution
-![Ansible](screenshots/ansible-playbook.webm)
+![Ansible](screenshots/ansible-playbook-1.png)
+![Ansible](screenshots/ansible-playbook-2.png)
 
 ### Pipeline Overview – All Stages Successful
 ![Jenkins](screenshots/Pipeline-Overview-(All-Stages-Green).png)
