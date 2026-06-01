@@ -404,8 +404,14 @@ Commit to master branch (25th of every month)
 ### Ansible – Playbook Execution
 ![Ansible](screenshots/ansible-playbook.webm)
 
-### Jenkins Pipeline Overview
-![Jenkins](screenshots/jenkins-pipeline.png)
+### Pipeline Overview -(All-Stages-Green)
+![Jenkins](screenshots/Pipeline-Overview-(All-Stages-Green).png)
+
+### Pipeline Script
+![Jenkins](screenshots/pipelinescript.txt)
+
+### Console output
+![Jenkins](screenshots/consoleoutput.txt)
 
 ### Docker Image on DockerHub
 ![DockerHub](screenshots/dockerhub-image.png)
