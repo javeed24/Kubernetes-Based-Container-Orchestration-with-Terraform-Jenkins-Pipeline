@@ -410,8 +410,15 @@ Commit to master branch (25th of every month)
 ### Pipeline Script
 ![Jenkins](screenshots/pipelinescript.txt)
 
-### Console output
-![Jenkins](screenshots/consoleoutput.txt)
+### Console output 
+![Jenkins](screenshots/consoleoutput-1.png)
+![Jenkins](screenshots/consoleoutput-2.png)
+![Jenkins](screenshots/consoleoutput-3.png)
+![Jenkins](screenshots/consoleoutput-4.png)
+![Jenkins](screenshots/consoleoutput-5.png)
+![Jenkins](screenshots/consoleoutput-6.png)
+![Jenkins](screenshots/consoleoutput-7.png)
+
 
 ### Docker Image on DockerHub
 ![DockerHub](screenshots/dockerhub-image.png)
